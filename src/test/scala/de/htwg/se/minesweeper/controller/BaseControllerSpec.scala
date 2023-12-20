@@ -8,7 +8,7 @@ import scala.util.Failure
 import de.htwg.se.minesweeper.observer.Observer
 import de.htwg.se.minesweeper.controller._
 import de.htwg.se.minesweeper.controller.baseController._
-import de.htwg.se.minesweeper.model.fieldComponent.field._
+import de.htwg.se.minesweeper.model.fieldComponent.field
 import de.htwg.se.minesweeper.model._
 import de.htwg.se.minesweeper.observer._
 import de.htwg.se.minesweeper.model.fieldComponent.FieldInterface
@@ -49,10 +49,15 @@ class TestObserver extends Observer[Event] with EventVisitor {
     }
 }
 
+/*object TestFieldFactory {
+    given fieldFactory: TestFieldFactory = field.TestFieldFactory(Vector(Vector(Cell(false, false))))
+}*/
+
 class BaseControllerSpec extends AnyWordSpec {
     "A BaseController" when {
         "it has a single cell field" should {
-            val controller = BaseController(TestFieldFactory(Vector(Vector(Cell(false, false)))))
+            given fieldFactory: TestFieldFactory = TestFieldFactory(Vector(Vector(Cell(false, false))))
+            val controller = BaseController()
             val observer = TestObserver()
             controller.addObserver(observer)
 
@@ -121,7 +126,8 @@ class BaseControllerSpec extends AnyWordSpec {
             }
         }
         "it has a multi cell field" should {
-            val controller = BaseController(TestFieldFactory(Vector.tabulate(3, 3)((y, x) => Cell(false, x == 0))))
+            given fieldFactory: TestFieldFactory = TestFieldFactory(Vector.tabulate(3, 3)((y, x) => Cell(false, x == 0)))
+            val controller = BaseController()
             val observer = TestObserver()
             controller.addObserver(observer)
             "without revealing the cell" in {
@@ -148,12 +154,13 @@ class BaseControllerSpec extends AnyWordSpec {
         }
         "it has another multi cell field" should {
             var i = 0
-            val controller = BaseController(GeneratorTestFieldFactory((y, x) => Cell(false, {
+            given fieldFactory: GeneratorTestFieldFactory = GeneratorTestFieldFactory((y, x) => Cell(false, {
                 if ((x, y) == (2, 0) && i < 3) then
                     i += 1
                     true
                 else x == 0
-            })))
+            }))
+            val controller = BaseController()
             val observer = TestObserver()
             controller.addObserver(observer)
 

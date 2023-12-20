@@ -3,6 +3,7 @@ package de.htwg.se.minesweeper.controller.baseController
 import de.htwg.se.minesweeper.model.fieldComponent._
 import scala.util.{Failure, Success, Try}
 import de.htwg.se.minesweeper.controller._
+import de.htwg.se.minesweeper.model.fieldComponent.FieldFactory.given
 
 private abstract class BaseControllerState(controller: BaseController) {
 	def reveal(x: Int, y: Int): Try[Unit] = {

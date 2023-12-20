@@ -16,7 +16,7 @@ import java.util.{Timer, TimerTask}
 import javafx.scene.layout.GridPane as JGridPane
 import javafx.scene.input.MouseButton
 
-class Gui(controller: ControllerInterface) extends JFXApp3 with Observer[Event] with EventVisitor {
+class Gui(using controller: ControllerInterface) extends JFXApp3 with Observer[Event] with EventVisitor {
 	controller.addObserver(this)
 
 	private val time_prop = IntegerProperty(0)

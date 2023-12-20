@@ -93,7 +93,7 @@ class RetryTuiState(tui: Tui) extends TuiState {
 	}
 }
 
-class Tui(val controller: ControllerInterface) extends Observer[Event] with EventVisitor {
+class Tui(using val controller: ControllerInterface) extends Observer[Event] with EventVisitor {
 	private var loop = true
 	private var state: TuiState = DefaultTuiState(this)
 	controller.addObserver(this)

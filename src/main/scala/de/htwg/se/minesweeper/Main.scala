@@ -9,16 +9,13 @@ import scala.util.Random
 import scala.concurrent.Await
 import scala.concurrent.Future
 
-import com.google.inject.Guice
+import de.htwg.se.minesweeper.controller.ControllerInterface.{given}
 
 @main
 def main(): Unit = {
-	val injector = Guice.createInjector(new MinesweeperModule)
-	val controller = injector.getInstance(classOf[ControllerInterface])
-
-	val tui = Tui(controller)
-	val gui = Gui(controller)
-	controller.setup()
+	val tui = Tui()
+	val gui = Gui()
+	baseController.setup()
 
 	implicit val context = scala.concurrent.ExecutionContext.global
 	val f = Future {

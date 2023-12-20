@@ -35,8 +35,9 @@ class TuiSpec extends AnyWordSpec {
 	"A Tui" when {
 		"play is called on input q" should {
 			"quit" in {
-				val controller = SpyController(TestFieldFactory(Vector(Vector(Cell(false, false)))))
-				val tui = Tui(controller)
+				given fieldFactory: TestFieldFactory = TestFieldFactory(Vector(Vector(Cell(false, false))))
+				given controller: SpyController = SpyController()
+				val tui = Tui()
 				val observer = TestObserver()
 				controller.addObserver(observer)
 
@@ -52,8 +53,9 @@ class TuiSpec extends AnyWordSpec {
 			}
 		}
 		"it has a single cell field" should {
-			val controller = SpyController(TestFieldFactory(Vector(Vector(Cell(false, false)))))
-			val tui = Tui(controller)
+			given fieldFactory: TestFieldFactory = TestFieldFactory(Vector(Vector(Cell(false, false))))
+			given controller: SpyController = SpyController()
+			val tui = Tui()
 			val observer = TestObserver()
 			controller.addObserver(observer)
 
@@ -123,8 +125,9 @@ class TuiSpec extends AnyWordSpec {
 			}
 		}
 		"it has a multi cell field" should {
-			val controller = SpyController(TestFieldFactory(Vector.tabulate(3, 3)((y, x) => Cell(false, x == 0))))
-			val tui = Tui(controller)
+			given fieldFactory: TestFieldFactory = TestFieldFactory(Vector.tabulate(3, 3)((y, x) => Cell(false, x == 0)))
+			given controller: SpyController = SpyController()
+			val tui = Tui()
 			val observer = TestObserver()
 			controller.addObserver(observer)
 
@@ -203,8 +206,9 @@ class TuiSpec extends AnyWordSpec {
 			}
 		}
 		"it is a long matrix" should {
-			val controller = SpyController(TestFieldFactory(Vector.tabulate(1, 15)((y, x) => Cell(false, x == 2))))
-			val tui = Tui(controller)
+			given fieldFactory: TestFieldFactory = TestFieldFactory(Vector.tabulate(1, 15)((y, x) => Cell(false, x == 2)))
+			given controller: SpyController = SpyController()
+			val tui = Tui()
 			val observer = TestObserver()
 			controller.addObserver(observer)
 
@@ -215,8 +219,9 @@ class TuiSpec extends AnyWordSpec {
 			}
 		}
 		"when it has some matrix" should {
-			val controller = SpyController(TestFieldFactory(Vector.tabulate(10, 10)((y, x) => Cell(false, x == 5))))
-			val tui = Tui(controller)
+			given fieldFactory: TestFieldFactory = TestFieldFactory(Vector.tabulate(10, 10)((y, x) => Cell(false, x == 5)))
+			given controller: SpyController = SpyController()
+			val tui = Tui()
 			val observer = TestObserver()
 			controller.addObserver(observer)
 			controller.startGame(10, 10, 0, 1)

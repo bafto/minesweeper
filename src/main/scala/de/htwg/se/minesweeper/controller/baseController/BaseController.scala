@@ -8,10 +8,7 @@ import de.htwg.se.minesweeper.observer._
 import de.htwg.se.minesweeper.controller._
 import de.htwg.se.minesweeper.model.fieldComponent.{FieldFactory, FieldInterface}
 
-import com.google.inject.Inject
-
-
-class BaseController @Inject() (val factory: FieldFactory) extends Observable[Event] with ControllerInterface {
+class BaseController(using val factory: FieldFactory) extends Observable[Event] with ControllerInterface {
 	private[baseController] var width: Int = 0
 	private[baseController] var height: Int = 0
 	private[baseController] var bomb_chance: Float = 0
