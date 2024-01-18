@@ -15,14 +15,7 @@ def main(): Unit = {
 	val controller = injector.getInstance(classOf[ControllerInterface])
 
 	val tui = Tui(controller)
-	val gui = Gui(controller)
 	controller.setup()
 
-	implicit val context = ExecutionContext.global
-	val f = Future {
-		gui.main(Array[String]())
-	}
-
 	tui.play()
-	Await.ready(f, Duration.Inf)
 }
