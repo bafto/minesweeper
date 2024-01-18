@@ -4,14 +4,42 @@
 Software Engineering Projekt an der HTWG im 3. Semester
 
 ## Spielprinzip
-Das Ziel von Minesweeper ist es in einem Zufällig generiertem Mienenfeld alle freien Felder mit links klick auzudecken, ohne auf eine Mine zu klicken.
-Die erste Zelle, die man aufdeckt, ist immer frei.
+In einem Feld, geheim und weit,
+Verborgen in der Digitalität,
+Liegt Minesweeper, das Spiel so klug,
+Ein Minenfeld, gefährlich, doch voller Zug.
 
-Freie Zellen, die mindestens eine Miene als Nachbar besitzen, haben eine Zahl, welche die Anzahl der benachbarten Mienen anzeigt.
+Mit einem Klick, so sanft, so leicht,
+Ein Feld sich öffnet, frei und reich.
+Die erste Zelle, stets ein Raum,
+Frei von Gefahr, ein sicherer Traum.
 
-Wenn eine freie Zelle aufdedeckt wird, die keine Minen als Nachbarn hat, werden die Nachbarn der Miene ebenfalls aufgedeckt.
+Doch ach, die Felder, nah und fern,
+Verbergen Minen, tief im Kern.
+Ein Zahlenspiel, so raffiniert,
+Das uns durch dieses Labyrinth führt.
 
-Man kann mit rechts klick eine Flagge setzten, falls man vermutet, dass sich dort eine Mine befindet und sich diese Position merken will.
+Freie Felder, klar und rein,
+Ohne Minen, laden ein.
+Sie öffnen Türen, weiten den Blick,
+Offenbaren Pfade, Stück für Stück.
 
-Sobald alle freien felder aufgedeckt wurden, ist das Spiel gewonnen. Wenn man auf eine Mine klickt, ist das Spiel verloren.
-Von dort aus kann man ein neues Spiel anfangen oder zum Menü zurückkehren.
+Mit rechtem Klick, setz eine Fahne,
+Markiere das Feld, in deiner Bahne.
+Ein Zeichen, ein Hinweis, so klug gedacht,
+Bewahrt dich vor der Minen Macht.
+
+Und wenn das Feld, so weit und groß,
+Von Minen befreit, ganz famos,
+Dann jubelt laut, das Spiel ist gewonnen,
+Ein Meisterwerk, geschickt gesponnen.
+
+Doch ach, ein Fehltritt, schnell geschehn,
+Lässt das ganze Feld vergehn.
+Ein Klick zu viel, die Mine, sie springt,
+Das Spiel verloren, das Ende, es klingt.
+
+Dann starte neu, beginne von vorn,
+In diesem Minen-Puzzle, so schön, so enorm.
+Ein Spiel von Logik, Mut und Verstand,
+In digitalen Weiten, ein unbekanntes Land.
